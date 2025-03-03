@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Iconos de bootstrap (redes sociales en mi caso:) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Bootstrap 5 general -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <style>
+        .progress-barColores {
+            transition: width 0.5s ease-in-out;
+            background: linear-gradient(to right, red, green);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <!-- Exercici: Prova aquest exemple i canvia el valor del width al 75% o 100%. -->
+        <h3 style="margin: 5%; text-align: center; margin-bottom: -90px;">Progress bar a Bootstrap</h3>
+        <div class="progress" style="margin: 5%;">
+            <!-- Barra al 75% -->
+            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="50" aria-valuemin="0"
+                aria-valuemax="100">
+                75% <!-- Si se cambia el width se cambia el % -->
+            </div>
+        </div>
+
+
+
+
+        <!-- ✅ Exercici: Crea una progress bar que comenci en vermell i canviï a verd a mesura que avanci. -->
+        <h3 style="margin: 5%; text-align: center; margin-bottom: -90px;">Progress bar amb diferents colors</h3>
+        <div class="progress" style="margin: 5%; margin-bottom: -5px;">
+            <div class="progress-bar bg-success" style="width: 70%;">70%</div>
+        </div>
+        <div class="progress mt-2" style="margin: 5%; margin-bottom: -5px;">
+            <div class="progress-bar bg-info" style="width: 50%;">50%</div>
+        </div>
+        <div class="progress mt-2" style="margin: 5%; margin-bottom: -5px;">
+            <div class="progress-bar bg-warning" style="width: 30%;">30%</div>
+        </div>
+        <div class="progress mt-2" style="margin: 5%; margin-bottom: -5px;">
+            <div class="progress-bar bg-danger" style="width: 20%;">20%</div>
+        </div>
+        <div class="progress mt-2" style="margin: 5%;">
+            <div class="progress-bar progress-barColores" style="width: 70%;">70%</div>
+        </div>
+
+
+
+
+
+        <!-- ✅ Exercici: Crea una progress bar animada que representi la càrrega d’un fitxer al 80%. -->
+        <h3 style="margin: 5%; text-align: center; margin-bottom: -90px;">Progress bar animada</h3>
+        <div class="progress" style="margin: 5%;">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary"
+                style="width: 80%; height: 100px;">80%</div>
+        </div>
+
+
+
+
+
+        <!-- ✅ Exercici: Simula el progrés de tres tasques diferents en una sola barra. -->
+        <h3 style="margin: 5%; text-align: center; margin-bottom: -90px;">Progress bar amb múltiples seccions</h3>
+        <div class="progress" style="margin: 5%;">
+            <div class="progress-bar bg-success" style="width: 50%;">50%</div>
+            <div class="progress-bar bg-warning" style="width: 40%;">40%</div>
+            <div class="progress-bar bg-danger" style="width: 10%;">10%</div>
+        </div>
+
+
+        <!-- ✅ Exercici: Modifica el codi perquè la barra tornin a zero quan arribi al 100%. -->
+        <h3 style="margin: 5%; text-align: center; margin-bottom: -90px;">Progress bar dinàmica amb JavaScript</h3>
+        <div class="progress" style="margin: 5%;">
+            <div id="myProgressBar" class="progress-bar bg-info" style="width: 0%;">0%</div>
+        </div>
+        <button style="margin: 5%;" class="btn btn-primary mt-2" onclick="incrementoProgreso()">Augmentar
+            Progrés</button>
+        <button style="margin: 5%;" class="btn btn-primary mt-2" onclick="reiniciarProgreso()">Reiniciar barra</button>
+
+        <script>
+            function incrementoProgreso() {
+                let barraProgreso = document.getElementById("myProgressBar");
+                let anchoActual = parseInt(barraProgreso.style.width);
+
+                if (anchoActual < 100) {
+                    let newWidth = anchoActual + 10;
+                    barraProgreso.style.width = newWidth + "%";
+                    barraProgreso.innerText = newWidth + "%";
+                }
+            }
+
+            function reiniciarProgreso() {
+                let barraProgreso = document.getElementById("myProgressBar");
+                barraProgreso.style.width = "0%";
+                barraProgreso.innerText = "0%";
+            }
+        </script>
+    </main>
+
+
+
+
+
+
+    <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  <!-- Bootstrap 5 JS con popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+yB90D+AF1U0UptL3PsZNnW3cocInFYKx+H/r+93EavpN+X9/2z5oR8q5KWp6m" crossorigin="anonymous"></script>
+</body>
+
+</html>
