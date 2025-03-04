@@ -1,0 +1,23 @@
+.verde div {
+    background-color: rgb(120, 255, 120);
+    height: 60px;
+}
+.rosa div {
+    background-color: rgb(235, 114, 134);
+    height: 100px;
+}
+.gris div {
+    background-color: rgb(214, 214, 214);
+    height: 100px;
+}
+.naranja div {
+    background-color: orange;
+    height: 100px;
+}
+.azul div {
+    background-color:rgb(106, 188, 255);
+    height: 60px;
+}
+section div {
+    border: 3px solid rgb(255, 255, 255);
+}
